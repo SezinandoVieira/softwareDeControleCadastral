@@ -2,10 +2,7 @@ package com.tccProject.softwareDeControleCadastral.models;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -29,6 +26,9 @@ public class Pacientes {
 
     @Column(length = 10)
     private Date nascimento;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Enderecos endereco;
 
 
 }
