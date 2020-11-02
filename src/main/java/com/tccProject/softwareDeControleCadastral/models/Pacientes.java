@@ -30,5 +30,7 @@ public class Pacientes {
     @ManyToOne(cascade = CascadeType.ALL)
     private Enderecos endereco;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "consultas")
+    private Consultas consulta;
 
 }
