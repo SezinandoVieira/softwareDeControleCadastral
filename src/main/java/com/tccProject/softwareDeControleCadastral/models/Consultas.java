@@ -1,5 +1,6 @@
 package com.tccProject.softwareDeControleCadastral.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 import lombok.Data;
 
@@ -14,7 +15,9 @@ public class Consultas {
     @Id @GeneratedValue
     private Long id;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @NotNull
+    @Column(length = 20)
     private Date dataConsulta;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pacientes")
