@@ -1,28 +1,30 @@
 package com.tccProject.softwareDeControleCadastral.services.servicesimpl;
 
 import com.tccProject.softwareDeControleCadastral.models.Consultas;
-import com.tccProject.softwareDeControleCadastral.repositories.ConsultasRepository;
+import com.tccProject.softwareDeControleCadastral.repositories.ConsultaRepository;
 import com.tccProject.softwareDeControleCadastral.services.ConsultaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ConsultaServiceImpl implements ConsultaService {
     @Autowired
-    ConsultasRepository consultasRepository;
+    ConsultaRepository consultaRepository;
 
     @Override
     public List<Consultas> findAll() {
-        return consultasRepository.findAll();
+        return consultaRepository.findAll();
     }
 
     @Override
     public Consultas findById(Long id) {
-        return consultasRepository.findById(id).get();
+        return consultaRepository.findById(id).get();
     }
 
     @Override
     public Consultas save(Consultas consultas) {
-        return consultasRepository.save(consultas);
+        return consultaRepository.save(consultas);
     }
 }

@@ -34,6 +34,9 @@ public class Pacientes {
     @Column(length = 10)
     private Date nascimento;
 
+    @Column(length = 20)
+    private String senha;
+
     @ManyToOne(cascade = CascadeType.ALL)
     private Enderecos endereco;
 
